@@ -1,6 +1,10 @@
 from threading import Thread
 import time
 import random
+from copy import deepcopy
+
+def run(t):
+  t.start()
 
 class utils:
   def gettime():
@@ -148,6 +152,9 @@ class handler:
       self.rn = True
       runtask(self.obj)
       self.rn = False
+  def clone(self):
+    tm = Tasks()
+    return tm.create(target=self.target,args=self.args,name=self.name,daemon=self.daemon)
     
     
     
@@ -156,6 +163,7 @@ class handler:
 class Tasks:
   def __init__(self):
     self.tasklist = []
+
   def create(self,target,args=(),name="Task",daemon="0"):
     
     if name in self.tasklist:
@@ -175,3 +183,5 @@ class Tasks:
       t.stop()
     else:
       t.force("stop")
+  def clone(self,t):
+    return self.clones[t.name]

@@ -1,6 +1,7 @@
-from main import Tasks
+
 import time
-tm = Tasks()
+import taskel
+tm = taskel.Tasks()
 def myfunc():
   print("hello world")
 
