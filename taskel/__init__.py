@@ -1,7 +1,7 @@
 from threading import Thread
 import time
 import random
-from copy import deepcopy
+
 
 def run(t):
   t.start()
@@ -152,9 +152,7 @@ class handler:
       self.rn = True
       runtask(self.obj)
       self.rn = False
-  def clone(self):
-    tm = Tasks()
-    return tm.create(target=self.target,args=self.args,name=self.name,daemon=self.daemon)
+
     
     
     
