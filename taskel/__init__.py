@@ -148,10 +148,10 @@ class handler:
       return print(f"{self.name} already looped, cannot start")
     if self.daemon == "0":
       self.daemon = False
-      self.obj = Thread(target=self.target,args=self.args,daemon = self.daemon)
-      self.rn = True
-      runtask(self.obj)
-      self.rn = False
+    self.obj = Thread(target=self.target,args=self.args,daemon = self.daemon)
+    self.rn = True
+    runtask(self.obj)
+    self.rn = False
 
     
     

@@ -1,12 +1,10 @@
-
+from taskel import Tasks
 import time
-import taskel
-tm = taskel.Tasks()
+tm = Tasks()
 def myfunc():
   print("hello world")
 
 t = tm.create(target=myfunc,daemon=False)
-t.loop(sec=5)
-time.sleep(14)
-print("all_tasks: " + str(tm.tasklist))
-t.stop()
+t.start()
+time.sleep(2)
+

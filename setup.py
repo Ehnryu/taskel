@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='taskel',
-      version='0.0.2',
+      version='0.0.3',
       description='The python library for all types of tasks',
       long_description="Readme.md",
       url='http://github.com/Ehnryu/taskel',
