@@ -1,6 +1,7 @@
 from threading import Thread
 import time
 import random
+import copy
 
 
 def run(t):
@@ -173,7 +174,7 @@ class Tasks:
         self.tasklist.append(name)
     else:
       self.tasklist.append(name)
-    t = handler(target=target,args=args,name=name,daemonz=daemon)
+    t = copy.deepcopy(handler)(target=target,args=args,name=name,daemonz=daemon)
     return t
   def end(self,t,force=False):
     self.tasklist.remove(t.name)
